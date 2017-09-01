@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/27 17:08:35 by mlambert          #+#    #+#             */
-/*   Updated: 2017/09/01 03:39:00 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/09/01 04:19:46 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ void	path_counting(t_lem *lem)
 		if (tmp->link->room->path_locked != 0)
 		{
 			ft_printf("Nom de salle %s\n", tmp->link->room->name);
-			lem->paths++;
 		}
 		tmp->link = tmp->link->next;
 	}

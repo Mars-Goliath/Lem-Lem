@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 18:41:42 by mlambert          #+#    #+#             */
-/*   Updated: 2017/09/01 03:34:09 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/09/01 04:21:46 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,19 @@ int			array_check(t_lem *lem, t_room *room)
 {
 	int	i;
 
+
+// OK IF I SWITCH THE RETURNS. EVERYTHING GOES CRAZAY.
+
+
+
 	i = 0;
 	while (i != lem->paths)
 	{
 		if (room->path_locked > 0 && lem->path_array[i] == room->path_locked)
-				return (0);
+				return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
 int			max_path(t_room *start, t_room *end)
