@@ -1,0 +1,22 @@
+21
+##start
+41 42 43
+janh 69 73
+loic 2 1
+j 4 4
+h 1 1
+t94 4 4
+huehue 21 14
+##end
+end 0 0
+janh-41
+janh-janh
+loic-janh
+janh-huehue
+41-loic
+41-t94
+t94-j
+j-h
+41-huehue
+end-huehue
+loic-end
