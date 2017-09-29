@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 01:35:01 by mlambert          #+#    #+#             */
-/*   Updated: 2017/07/03 05:00:08 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/09/29 16:57:04 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ t_room		*room_generation(t_lem *lem)
 	while (lem->room->next != NULL)
 		lem->room = lem->room->next;
 	if (!(lem->room->next = (t_room *)malloc(sizeof(t_room))))
-		errors(-2);	//a memdel of line would be a good idea i think. It means i should carry it around everywhere. Pretty much like my d"  "Yeah yeah, i get your point"  "...i meant like my dick johnny"  "..."
+		errors(-2);
 	lem->room = lem->room->next;
 	init_room(lem);
 	tmp_end_list = lem->room;

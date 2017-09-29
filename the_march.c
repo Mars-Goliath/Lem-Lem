@@ -6,19 +6,17 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/27 17:08:35 by mlambert          #+#    #+#             */
-/*   Updated: 2017/09/01 04:19:46 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/09/29 19:13:35 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
 
 void	path_counting(t_lem *lem)
 {
 	t_room *tmp;
 
 	tmp = lem->start;
-
 	tmp->link = tmp->first_link;
 	while (tmp->link != NULL)
 	{
@@ -30,7 +28,6 @@ void	path_counting(t_lem *lem)
 	}
 	ft_printf("Nombre de chemins :/ %d\n", lem->paths);
 }
-
 
 void	ants_n_rooms(t_lem *lem, t_room *path)
 {
@@ -92,7 +89,6 @@ int		the_march(t_lem *lem)
 	t_room	*path;
 
 	n = lem->colony;
-
 	path_counting(lem);
 	while (lem->end->ants_nb != lem->colony)
 	{

@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 01:10:38 by mlambert          #+#    #+#             */
-/*   Updated: 2017/09/01 02:10:19 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/09/12 19:05:51 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,7 @@ void			path_carving(t_lem *lem);
 int				the_march(t_lem *lem);
 void			display(t_lem *lem);
 int				check_sons(t_lem *lem, t_room *room, t_link **link);
+int				path_search(t_lem *lem, t_room *room, int n);
+void			debug (t_lem *lem);
 
 #endif
