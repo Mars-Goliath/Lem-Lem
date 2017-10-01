@@ -6,13 +6,13 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/04/15 01:35:01 by mlambert          #+#    #+#             */
-/*   Updated: 2017/09/29 16:57:04 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/10/02 01:25:36 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-int			check_format(t_lem *lem, char *line, int *i)
+int			check_format(char *line, int *i)
 {
 	int	xy;
 
@@ -81,7 +81,7 @@ int			room_specs(char *line, t_lem *lem, int start_1end_2)
 	i = (int)ft_strlen(line);
 	if (lem->phase == 1)
 		return (-1);
-	if (check_format(lem, line, &i) == -1)
+	if (check_format(line, &i) == -1)
 		return (-2);
 	if (*line == 'L')
 		return (-2);

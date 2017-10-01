@@ -6,7 +6,7 @@
 /*   By: mlambert <mlambert@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/06/21 18:41:42 by mlambert          #+#    #+#             */
-/*   Updated: 2017/09/29 17:10:52 by mlambert         ###   ########.fr       */
+/*   Updated: 2017/10/02 01:21:02 by mlambert         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int			max_path(t_room *start, t_room *end)
 	return (n_end >= n_start ? n_start : n_end);
 }
 
-t_room		*check_weight(t_lem *lem, t_room *room, \
-			t_room *room_link, t_room *tmp)
+t_room		*check_weight(t_room *room, t_room *room_link, t_room *tmp)
 {
 	if (room->weight > room_link->weight)
 	{
@@ -50,7 +49,7 @@ t_room		*check_weight(t_lem *lem, t_room *room, \
 	return (tmp);
 }
 
-t_room		*which_way(t_lem *lem, t_room *room)
+t_room		*which_way(t_room *room)
 {
 	t_room *tmp;
 
@@ -58,10 +57,10 @@ t_room		*which_way(t_lem *lem, t_room *room)
 	room->link = room->first_link;
 	while (room->link->next != NULL)
 	{
-		tmp = check_weight(lem, room, room->link->room, tmp);
+		tmp = check_weight(room, room->link->room, tmp);
 		room->link = room->link->next;
 	}
-	tmp = check_weight(lem, room, room->link->room, tmp);
+	tmp = check_weight(room, room->link->room, tmp);
 	return (tmp);
 }
 
@@ -79,7 +78,7 @@ void		path_carving(t_lem *lem)
 	paths = lem->paths;
 	while (path_tmp != lem->end)
 	{
-		path_tmp = which_way(lem, path_tmp);
+		path_tmp = which_way(path_tmp);
 		path_tmp->path_locked = n;
 	}
 }
